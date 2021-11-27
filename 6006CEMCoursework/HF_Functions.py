@@ -10,11 +10,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
+from collections import Counter
 from sklearn.metrics import accuracy_score,confusion_matrix,recall_score,roc_auc_score, precision_score,f1_score,plot_roc_curve,plot_roc_curve, plot_confusion_matrix,classification_report
 import warnings
 
 
-# https://github.com/azizepalali/rule_based_classification/blob/main/rule_based_classification.py
+# Reference:https://github.com/azizepalali/rule_based_classification/blob/main/rule_based_classification.py
 # Categoric or Numeric Data Analysis
 def grab_col_names(dataframe, cat_th=10, car_th=20):
     # cat_cols, cat_but_car
@@ -33,7 +34,7 @@ def grab_col_names(dataframe, cat_th=10, car_th=20):
     return cat_cols, num_cols, cat_but_car
 
 
-# https://github.com/azizepalali/rule_based_classification/blob/main/rule_based_classification.py
+# Reference:https://github.com/azizepalali/rule_based_classification/blob/main/rule_based_classification.py
 def cat_summary(dataframe, col_name, plot=False):
 
     print(pd.DataFrame({col_name: dataframe[col_name].value_counts(),
@@ -75,6 +76,9 @@ def label_encoder(dataframe, binary_col):  #Define label_ Encoder function
     return dataframe  #Return dataframe
 
 
+
+
+# Reference:https://gist.github.com/joseph-allen/14d72af86689c99e1e225e5771ce1600
 def detect_outliers(df,n,features):
     outlier_indices = []
     """
