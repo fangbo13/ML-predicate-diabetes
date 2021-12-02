@@ -113,3 +113,4 @@ def detect_outliers(df,n,features):
 #     sns.heatmap(cm, annot=True, fmt=".0f")
 #     plt.title('Accuracy Score: {0}'.format(acc), size=10)
 #     plt.show()
+# Creating a function for prediction
